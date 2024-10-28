@@ -10,6 +10,7 @@ interface ITask extends Document {
     category: string;
     sharedWith: mongoose.Schema.Types.ObjectId[];
     recurring: boolean;
+    email: string; // New field for user's email
 }
 
 const taskSchema = new Schema({
@@ -22,6 +23,7 @@ const taskSchema = new Schema({
     category: String,
     sharedWith: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }],
     recurring: { type: Boolean, default: false },
+    email: { type: String, required: true },
     createdAt: { type: Date, default: Date.now },
 });
 
