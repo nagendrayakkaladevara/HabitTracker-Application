@@ -6,6 +6,7 @@ import connectDB from './config/database';
 import userRoutes from './routes/userRoutes';
 import taskRoutes from './routes/taskRoutes';
 import notificationRoutes from './routes/notificationRoutes';
+import habitRoutes from './routes/habitRoutes';
 
 dotenv.config();
 
@@ -23,5 +24,6 @@ connectDB();
 app.use('/api/users', userRoutes);
 app.use('/api/tasks', taskRoutes);
 app.use('/api/notifications', notificationRoutes);
+app.use('/api/habit', habitRoutes);
 
 export default app;
